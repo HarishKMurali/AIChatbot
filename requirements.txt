@@ -2,6 +2,5 @@ flask
 anthropic
 transformers
 pinecone
-torch
 bs4
 requests
