@@ -1,0 +1,14 @@
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore data files
+data/
+*.csv
+*.pkl
+*.h5
+
+# Ignore development tools
+.git/
+*.md
+*.log
