@@ -40,7 +40,7 @@ def scrape_website(base_urls):
     return scraped_data
 
 # Example usage
-base_urls = ["https://www.predictiv.ai/"]#, "https://www.predictiv.ai/pages/about-leading-artificial-intelligence-company-toronto", "https://www.predictiv.ai/pages/subsidiaries","https://www.predictiv.ai/pages/investors","https://www.predictiv.ai/blogs/toronto-artificial-intelligence-company-blog"]
+base_urls = ["https://www.predictiv.ai/", "https://www.predictiv.ai/pages/about-leading-artificial-intelligence-company-toronto", "https://www.predictiv.ai/pages/subsidiaries","https://www.predictiv.ai/pages/investors","https://www.predictiv.ai/blogs/toronto-artificial-intelligence-company-blog"]
 scraped_data = scrape_website(base_urls)
 print(len(scraped_data))
 print(sys.getsizeof(scraped_data))

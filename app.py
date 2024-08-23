@@ -36,7 +36,7 @@ def retrieve_context(query):
 
 # Function to get a response from Claude
 def get_claude_response(prompt, context):
-    instructions = "You are a representative of Predictive AI. Given the context and a prompt answer to the user as a company representative. Donot "
+    instructions = "You are a representative of Predictiv AI. Given the context and a prompt answer to the user as a company representative. Donot "
     full_prompt = f"{HUMAN_PROMPT}{instructions} {context}\n\n{prompt}{AI_PROMPT}"
     response = anthropic_client.completions.create(
         model="claude-2", 
