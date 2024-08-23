@@ -20,43 +20,17 @@ def scrape_website(base_urls):
         text = ' '.join([p.get_text() for p in soup.find_all('p')])
         scraped_data.append((url, text))
 
-    # def scrape_page(url):
-    #     if url in visited_urls:
-    #         return
-    #     visited_urls.add(url)
-    #     response = requests.get(url)
-    #     soup = BeautifulSoup(response.content, 'html.parser')
-
-    #     # Extract text from the page
-    #     text = ' '.join([p.get_text() for p in soup.find_all('p')])
-    #     scraped_data.append((url, text))
-
-        # # Find and scrape all linked pages within the same domain
-        # for link in soup.find_all('a', href=True):
-        #     if base_url in link['href'] and link['href'] not in visited_urls:
-        #         scrape_page(link['href'])
-
-    # scrape_page(base_url)
     return scraped_data
 
 # Example usage
-base_urls = ["https://www.predictiv.ai/", "https://www.predictiv.ai/pages/about-leading-artificial-intelligence-company-toronto", "https://www.predictiv.ai/pages/subsidiaries","https://www.predictiv.ai/pages/investors","https://www.predictiv.ai/blogs/toronto-artificial-intelligence-company-blog"]
+base_urls = ["https://www.foni.ai/", "https://www.predictiv.ai/", "https://www.predictiv.ai/pages/about-leading-artificial-intelligence-company-toronto", "https://www.predictiv.ai/pages/subsidiaries","https://www.predictiv.ai/pages/investors","https://www.predictiv.ai/blogs/toronto-artificial-intelligence-company-blog"]
 scraped_data = scrape_website(base_urls)
 print(len(scraped_data))
 print(sys.getsizeof(scraped_data))
-# print(scraped_data)
+
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
-# index = pc.create_index(
-#     name="predictiv-ai",
-#     dimension=384, 
-#     metric="cosine", 
-#     spec=ServerlessSpec(
-#         cloud="aws",
-#         region="us-east-1"
-#     ) 
-# )
 
 # Initialize Pinecone
 # pinecone.init(api_key="d248f58f-0aa6-4952-80e0-809eaaca18ae", environment="us-west1-gcp")
